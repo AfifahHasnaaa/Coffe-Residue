@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link href="carousel.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <title>Log In</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        :root{
+            --background: #1634c99db;
+            --text: #fff;
+            --text2: #000;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        /* body {
+            background: url('https://mrwallpaper.com/images/hd/cream-aesthetic-beautiful-nature-ukgnnxldic6x0b1l.jpg');
+            background-position:center;
+            background-size:contain;
+            background-attachment:scroll;
+            background-repeat:repeat;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        } */
+        .form-containet{
+            margin-top: 5px;
+            width: 1000px;
+            height: 80px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+        }
+
+        .map-container-3{
+            overflow:hidden;
+            padding-bottom:56.25%;
+            position:relative;
+            height:0;
+        }
+        .map-container-3 iframe{
+            left:0;
+            top:0;
+            height:100%;
+            width:100%;
+            position:relative;
+        }
+        
+        @media(max-width: 892px){
+            .form-containet{
+                width: 80%;
+            }
+            .col-1{
+                display: none;
+            }
+            .col-2{
+                width: 100%;
+            }
+        }
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      .bg-video {
+            transform: translate(-50%, -50%);
+            /* object-fit: cover; */
+            position: fixed;
+            object-fit: cover;
+            object-position: center;
+            background-repeat: repeat;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          background-attachment:scroll;
+          overflow: hidden;
+          background-position:center;
+            background-size:contain;
+            background-attachment:scroll;
+            background-repeat:repeat;
+            align-items: center;
+            justify-content: center;
+            min-height:fit-content;
+      }
+
+      #bgVideo {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -1; /* Pastikan video berada di belakang konten lain */
+      }
+      .content {
+          position: relative;
+          z-index: 1;
+          padding: 20px;
+           /* Optional: background for content */
+      }
+    </style>
+</head>
+<body class="container-fluid content">
+    <video autoplay muted loop id="bgVideo">
+      <source src="bahan/video4.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <nav>
+          <div  class="container-fluid form-containet mt-2 p-3 sticky-top" style="background: rgba(255, 255, 255, 0.2);width: 1000px;height: 80px; margin-bottom: 2%;">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" href="#">
+                  <img src="bahan/logo.png" width="80px">
+                </a>
+        
+                <ul class="nav ms-auto col-12 col-lg-auto mb-2 justify-content-center mb-md-0 text-black">
+                  <li class="nav-item">
+                    <a class="nav-link active text-black" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-black" href="about.html">About</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <main class="content">
+
+      <!-- <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video class="d-block w-100" autoplay loop muted>
+              <source src="bahan/video1.mp4" type="video/mp4">
+            </video>
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Coffe Residue.</h1>
+                <p style="color: white;font-size: small;">Nikmati secangkir kopi berkualitas terbaik di Coffee, tempat di mana setiap tegukan memberikan kehangatan dan kenikmatan yang tiada tara.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Pesan Sekarang</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video class="d-block w-100" autoplay loop muted>
+              <source src="bahan/video2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="d-block w-100" autoplay loop muted>
+              <source src="bahan/video3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> -->
+      
+      <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner ms-auto me-auto p-4">
+          <div class="carousel-item active " style="border-radius: 25%;">
+            <img class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" src="https://miro.medium.com/v2/resize:fit:1000/1*HwSHOyIuQcNOhFVYICV0aw.jpeg">
+
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Coffe Residue.</h1>
+                <p style="color: white;font-size: small;">Nikmati secangkir kopi berkualitas terbaik di Coffee, tempat di mana setiap tegukan memberikan kehangatan dan kenikmatan yang tiada tara.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Pesan Sekarang</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" src="https://cosmouk.cdnds.net/17/05/980x490/landscape-1486051667-coffee-barista.jpg" >
+            
+    
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Kenikmatan Perpaduan.</h1>
+                <p style="color: white;font-size: small;">Temukan perpaduan sempurna antara rasa dan aroma di Coffee Residue, coffee shop yang menyajikan kopi pilihan dengan suasana yang cozy dan nyaman.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" src="https://thumb.ac-illust.com/7c/7cc9e25812b306b5e532c67bac827ea2_t.jpeg">
+    
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>Kenikmatan Coffe.</h1>
+                <p style="color: white;font-size: small;">Rasakan pengalaman baru dengan beragam kreasi kopi spesial di Coffee Residue, tempat yang ideal untuk bersantai dan memulai hari dengan penuh semangat.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Pesan Sekarang</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> -->
+    
+      <div class="container row featurette ms-auto me-auto text-center mb-5 content">
+        <div class="container text-center" style="color: white;font-size:x-large; text-align: justify;font-weight:bold;">
+          Introduction
+        </div>
+        <div class="col-md-8 mt-auto mb-auto">
+          <!-- <h2 class="featurette-heading" style="color: black; font-size:large; font-weight:500;">Residue Cafe</span></h2> -->
+          <p class="container lead text-center mt-auto mb-auto ms-auto" style="color: white;font-size: larger; text-align: justify;">Residue Cafe adalah tempat yang sempurna untuk menikmati momen santai dengan suasana hangat dan nyaman. Dengan desain interior yang unik dan estetis, setiap sudut cafe ini memberikan nuansa tenang yang memanjakan mata. Menyajikan berbagai pilihan kopi premium, teh aromatik, dan hidangan ringan yang lezat, Residue Cafe menjadi destinasi favorit bagi mereka yang mencari tempat untuk bekerja, bertemu teman, atau sekadar menikmati waktu sendiri. Di sini, setiap tegukan dan gigitan dibuat dengan cinta, memastikan pengalaman kuliner yang tak terlupakan. Mari bergabung di Residue Cafe, di mana setiap residu kenangan menjadi manis dan berharga.</p>
+        </div>
+        <div class="col-md-4 mt-auto mb-auto">
+          <img class="bd-placeholder-img" width="300" height="300" aria-hidden="true" src="https://hotelier.id/wp-content/uploads/2023/01/Eonia-House-Eatery.jpeg">
+        </div>
+      </div>
+    
+      <div class="container-fluid marketing p-5 content" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+        <div class="row text-center">
+          <div class="col-lg-3">
+            <img src="https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+            <h2 style="color: white;">Cozy</h2>
+            <p style="color: white; font-size: small; text-align: justify;">Menawarkan suasana yang nyaman dan hangat.</p>
+          </div>
+          <div class="col-lg-3">
+            <img src="https://d1r9hss9q19p18.cloudfront.net/uploads/2018/03/IMG_4184.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+            <h2 style="color: white;">Artisanal</h2>
+            <p style="color: white; font-size: small; text-align: justify;">Menyajikan kopi dengan kualitas terbaik dan teknik khusus.</p>
+          </div>
+          <div class="col-lg-3">
+            <img src="https://foto.kontan.co.id/PeC43y3n_tsAEohKKthByMh4H5w=/smart/filters:format(webp)/2022/12/20/363278876p.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+            <h2 style="color: white;">Trendy</h2>
+            <p style="color: white; font-size: small; text-align: justify;">Menjadi tempat yang modern dan mengikuti tren terkini.</p>
+          </div>
+          <div class="col-lg-3">
+            <img src="https://www.pinhome.id/info-area/wp-content/uploads/2022/03/Coffeeright-Arsitag.jpeg" class="bd-placeholder-img rounded-3" width="140" height="140">
+            <h2 style="color: white;">Inviting</h2>
+            <p style="color: white; font-size: small; text-align: justify;">Memiliki atmosfer yang mengundang untuk bersantai dan menikmati waktu.</p>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="container-fluid text-center mt-3 content" style="color: black;font-size:x-large; text-align: justify;font-weight:bold;">Menu<h4>
+
+      <h6 class="container-fluid text-center content" style="color: black;font-size:large; text-align: justify;font-weight:bold;">Makanan<h6>
+        <div class="row text-center ps-5 pe-5 pt-2 pb-2">
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://i0.wp.com/resepkoki.id/wp-content/uploads/2016/09/Resep-Nasi-Goreng-Ikan-Teri.jpg?fit=1920%2C1440&ssl=1" class="bd-placeholder-img rounded-3 p-1" width="140" height="140">
+              <h2 style="color: black; margin-left: 2px; font-weight: 500; font-size:large">Nasi Goreng</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Nikmati kelezatan nasi goreng kami yang disajikan dengan telur mata sapi, ayam suwir, dan udang segar.</p>
+              <div class="row container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+              <h2 style="color: black;">Arabica Latte</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Coffe Arabiica dengan toping pilihan dan rasa yang terealisasi.</p>
+              <div class="row">
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+                </div>
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Book Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+              <h2 style="color: black;">Arabica Latte</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Coffe Arabiica dengan toping pilihan dan rasa yang terealisasi.</p>
+              <div class="row">
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+                </div>
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Book Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+              <h2 style="color: black;">Arabica Latte</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Coffe Arabiica dengan toping pilihan dan rasa yang terealisasi.</p>
+              <div class="row">
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+                </div>
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Book Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <h6 class="container-fluid text-center content" style="color: black;font-size:large; text-align: justify;font-weight:bold;">Minuman<h6>
+        <div class="row text-center ps-5 pe-5 pt-2 pb-2">
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://images.squarespace-cdn.com/content/v1/5cf7ddba98c8ee000167e0a5/1570365378493-84Y18J0NRKVV35709J2Y/%25arabica-02.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+              <h2 style="color: black;">Arabica Latte</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Coffe Arabiica dengan toping pilihan dan rasa yang terealisasi.</p>
+              <div class="row">
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+                </div>
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Book Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+              <h2 style="color: black;">Arabica Latte</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Coffe Arabiica dengan toping pilihan dan rasa yang terealisasi.</p>
+              <div class="row">
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+                </div>
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Book Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+              <h2 style="color: black;">Arabica Latte</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Coffe Arabiica dengan toping pilihan dan rasa yang terealisasi.</p>
+              <div class="row">
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+                </div>
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Book Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 p-2">
+            <div class="p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+              <img src="https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg" class="bd-placeholder-img rounded-3" width="140" height="140">
+              <h2 style="color: black;">Arabica Latte</h2>
+              <p style="color: black; font-size: small; text-align: justify;">Coffe Arabiica dengan toping pilihan dan rasa yang terealisasi.</p>
+              <div class="row">
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Rp50.000</a></p>
+                </div>
+                <div class="col-6 container text-center">
+                  <p><a class="btn btn-lg btn-dark" href="#" style="color: white; font-size: small;">Book Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="container text-center" style="color: black;font-size:x-large; text-align: justify;font-weight:bold;">
+              All Voucher
+          </div>
+          <div class="row align-items-md-stretch p-5">
+            <div class="col-md-6" >
+              <div class="h-100 p-5 text-black rounded-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+                <h2 class="fw-bold">Birthday Bash Discount</h2>
+                <p style="color: black;text-align: justify;">Diskon 20% dengan ketentuan Promo ini berlaku setiap hari Senin untuk pelanggan yang datang sendiri (tanpa pasangan atau teman), Berlaku untuk semua menu makanan dan minuman, Pelanggan cukup menunjukkan identitas diri yang valid di kasir untuk mendapatkan diskon, Tidak berlaku untuk layanan pesan antar.</p>
+                <button class="btn btn-outline-secondary" type="button">Klaim Sekarang</button>
+              </div>
+            </div>
+            <div class="col-md-6 text-black">
+              <div class="h-100 p-5 rounded-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+                <h2 class="fw-bold">Happy Single Day</h2>
+                <p style="color: black;text-align: justify;">Diskon 30% dengan ketentuan berlaku pada hari ulang tahun pelanggan, dan juga 3 hari sebelum atau sesudahnya, Berlaku untuk semua menu makanan dan minuman, Pelanggan harus menunjukkan kartu identitas yang membuktikan tanggal ulang tahun, Diskon hanya berlaku untuk pemilik hari ulang tahun, dan maksimal untuk 1 kali transaksi, Diskon ini bisa digabungkan dengan promo lainnya.</p>
+                <button class="btn btn-outline-secondary" type="button">Klaim Sekarang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid text-center p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+          <div class="container-fluid text-center p-3" style="color: black;font-size:x-large; text-align: justify;font-weight:bold;">
+            Galery
+          </div>
+          <div class="container-fluid text-center">
+            <div class="row">
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://awsimages.detik.net.id/community/media/visual/2020/08/22/tempat-ngopi-di-jogja-2.jpeg?w=1080" alt="" width="230">
+                </div>
+              </div>
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://awsimages.detik.net.id/community/media/visual/2020/08/22/tempat-ngopi-di-jogja-2.jpeg?w=1080" alt="" width="230">
+                </div>
+              </div>
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://awsimages.detik.net.id/community/media/visual/2020/08/22/tempat-ngopi-di-jogja-2.jpeg?w=1080" alt="" width="230">
+                </div>
+              </div>
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://awsimages.detik.net.id/community/media/visual/2020/08/22/tempat-ngopi-di-jogja-2.jpeg?w=1080" alt="" width="230">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid text-center p-2">
+          <div class="container-fluid text-center p-2">
+            <p style="color: black;font-size:x-large;font-weight:bold;">Open Everyday</p>
+            <p style="color: black;font-size:large;">Mulai jam 08.00 s/d 22.00</p>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <div class="row m-auto p-3">
+                <div class="col-12 rounded-3" style="object-position: center;">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.867061512259!2d110.40669821441304!3d-7.747337794411526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5910d2b3f1fd%3A0xa8c16afbc64fa03d!2sUniversitas%20Amikom%20Yogyakarta!5e0!3m2!1sid!2sid!4v1692105817359!5m2!1sid!2sid" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="w-100" height="400" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 mt-auto mb-auto">
+              <p style="color: black;font-size:medium; text-align: justify;">Alamat Kantor :</p>
+              <p style="color: black;font-size:medium; text-align: justify;">Universitas Amikom Yogyakarta
+                Jalan Ring Road Utara, Condongcatur,
+                Depok, Sleman, Yogyakarta,
+                Indonesia, 55283</p>
+              <p style="color: black;font-size:medium; text-align: justify;">Nomor Telepon :</p>
+              <p style="color: black;font-size:medium; text-align: justify;">(0274) 884201</p>
+              <p style="color: black;font-size:medium; text-align: justify;">Email Kontak :</p>
+              <p style="color: black;font-size:medium; text-align: justify;">info@amikom.ac.id</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid text-center p-3" style="background: rgba(255, 255, 255, 0.2);backdrop-filter: blur(20px);">
+          <div class="container-fluid text-center p-3" style="color: black;font-size:x-large; text-align: justify;font-weight:bold;">
+            Contact Us
+          </div>
+          <div class="container-fluid text-center">
+            <div class="row p-3">
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="" width="100">
+                </div>
+              </div>
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1000px-Instagram_logo_2022.svg.png" alt="" width="100">
+                </div>
+              </div>
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://www.tanjunglesung.com/wp-content/uploads/2018/12/logo-wa-whatsapp-300x300.png" alt="" width="100">
+                </div>
+              </div>
+              <div class="col-3 p-1">
+                <div class="p-1">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="" width="100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+    </main>
+
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>      
+</body>
+</html>
+
+
